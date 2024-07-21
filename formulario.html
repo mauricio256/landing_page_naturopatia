@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="css/styleForm.css">
+    <script defer src="js/scriptForm.js"></script>
+</head>
+<body>
+    <div style="text-align: center;">
+        <img src="img/icone.png" width="150px" alt="">
+    </div>
+          <p >Mega-Promoção: 1.600,00 e você pode dividir esse valor em até 4 parcelas, de 400,00 cada, no Cartão de Crédito.</p>
+          <p >Inscreva 5 pessoas, e você ganha 1.000, em descontos</p><br>
+    <h1>Formulário de Inscrição</h1>
+    <form id="form" action="php/cadastro.php" method="post">
+
+        <label for="curso">Curso:</label>
+         <select required name="curso" name="curso" id="curso">
+            <option value=""></option>
+            <option value="PRÁTICAS DE DIAGNOSE E TERAPIAS SOBRE OS PONTOS DE ENERGIA DO CORPO">PRÁTICAS DE DIAGNOSE E TERAPIAS SOBRE OS PONTOS DE ENERGIA DO CORPO</option>
+            <option value="IRIDOLOGIA CLÍNICA E LABORATORIAL">IRIDOLOGIA CLÍNICA E LABORATORIAL</option>
+            <option value="AURICULOTERAPIA CLÍNICA">AURICULOTERAPIA CLÍNICA</option>
+            <option value="CURSO PARA TERAPEUTA SOCORRISTA">CURSO PARA TERAPEUTA SOCORRISTA</option>
+            <option value="QUIROPRÁTICA">QUIROPRÁTICA</option>  
+        </select>
+
+        <label for="name">Nome Completo:</label>
+        <input class="input" type="text" name="name" id="name" onkeyup="">
+        <span class="span"></span>
+
+        <label for="CPF">CPF:</label>
+        <input class="input" name="CPF" id="CPF" type="text" onkeyup="cpfCheck(this)" maxlength="18" onkeydown="javascript: fMasc( this, mCPF );"> <span id="cpfResponse"></span>
+        <span class="span"></span>
+
+        <label for="RG">RG:</label>
+        <input class="input" name="RG" type="text"  minlength="9" id="RG">
+        <span class="span"></span>
+
+        <label for="nascimento">Nascimento:</label>
+        <input required name="nascimento" value="1999-01-01" class="input" type="date" id="nascimento">
+        <span class="span"></span>
+
+        <hr>
+
+        <label for="CEP">CEP:</label>
+        <input class="input" name="CEP" type="text" id="CEP">
+        <span class="span"></span>
+
+         <label for="UF">UF:</label>
+         <select required name="UF" name="estadoCivil" id="estadoCivil">
+            <option value=""></option>
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espirito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+            
+            
+        </select>
+
+        <label for="cidade">Cidade:</label>
+        <input class="input" type="text" name="cidade" id="cidade">
+        <span class="span"></span>
+
+        <label for="endereco">Endereço:</label>
+        <input class="input" type="text" name="endereco" id="endereco">
+        <span class="span"></span>
+
+        <hr>
+
+        <label for="Filiacao">Filiação (Nome da mãe)</label>
+        <input class="input" type="text" name="filiacao"  id="filiacao">
+        <span class="span"></span>
+
+        <label for="estadoCivil">Estado Civil:</label>
+        <select required name="estadoCivil" id="estadoCivil">
+            <option value=""></option>
+            <option value="SOLTEIRO">Solteiro</option>
+            <option value="CASADO">Casado</option>
+        </select>
+        
+        <label for="atividade">Atividade: (Ex: Eletricista)</label>
+        <input class="input" name="atividade" type="text" id="atividade">
+        <span class="span"></span>
+
+        <hr>
+
+        <label for="telefone">Telefone:</label>
+        <input class="input" type="text" id="phone" name="telefone" onkeypress="mask(this, mphone);" onblur="mask(this, mphone);" />
+        <span class="span"></span>
+
+        <label for="email">E-mail:</label>
+        <input class="input" type="email" name="email"  id="email">
+        <span class="span"></span>
+
+        <label for="escolaridade">Escolaridade:</label>
+        <select name="escolaridade" id="escolaridade">
+            <option value="Ensino Fundamental Incompleto">Ensino Fundamental Incompleto</option>
+            <option value="Ensino Medio Incompleto">Ensino Medio Incompleto</option>
+            <option value="Ensino Superior Incompleto">Ensino Superior Incompleto</option>
+            <option value="Ensino Fundamental">Ensino Fundamental</option>
+            <option value="Ensino Medio">Ensino Medio</option>
+            <option value="Ensino Superior">Ensino Superior</option>
+        </select><br>
+
+        <label for="dataConclusao">Data conclusão: </label>(Caso esteja cursando ainda, informar previsão para término)
+        <input required class="input" type="date" value="2020-01-01"  name="dataConclusao" id="dataConclusao">
+        <span class="span"></span>
+
+        <label for="telefone">Este curso foi indicado por:</label>
+        <input class="input" type="text" id="phone" name="indicacao" />
+        <span class="span"></span>
+
+            <button type="submit" name="submit" onclick="return validaForm();">Enviar</button>
+            <a href="./">Página Principal</a>
+    </form>
+    
+</body>
+</html>
